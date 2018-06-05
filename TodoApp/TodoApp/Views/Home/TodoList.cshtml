@@ -1,4 +1,4 @@
-﻿@model List<string>
+﻿@model List<TodoApp.Models.TodoItem>
 
 @*
     Kiegészítettük a View definícióját, hogy képes 
@@ -18,8 +18,15 @@
 @*A megoldás, hogy egy ciklussal kiolvassuk a listából az adatokat, és úgy írjuk a HTML-t*@
 
 <ol>
-    @foreach (var elem in Model)
+    @foreach (var todoItem in Model)
     {
-        <li>@elem</li>
+        if (todoItem.Done)
+        {
+            <li><strike>@todoItem.Name</strike></li>
+        }
+        else
+        {
+            <li>@todoItem.Name</li>
+        }
     }
 </ol>

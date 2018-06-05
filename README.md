@@ -221,6 +221,11 @@ Vagyis, a HomeController.TodoList() action-höz automatikusan tartozó nézet it
 
 A HTML kód írásához [ezt a tutorialt](https://www.w3schools.com/Html) használhatjuk.
 
+A nézet képes definiálni az adatmodell típusát, amin dolgozik.
+
+- MVC: Model-View-Controller
+  - Model
+    Az adatokat tartalmazó objektum, ami a Controller és a View között az adatokat szállítja
 
 
 

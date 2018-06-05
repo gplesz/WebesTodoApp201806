@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using TodoApp.Models;
 
 namespace TodoApp.Controllers
 {
@@ -30,13 +31,13 @@ namespace TodoApp.Controllers
         public ActionResult TodoList()
         {
             //bevásárló lista adatai:
-            var lista = new List<string>();
+            var lista = new List<TodoItem>();
 
-            lista.Add("Só");
-            lista.Add("Cukor");
-            lista.Add("Spagetti");
-            lista.Add("Marhahús");
-            lista.Add("Paradicsom");
+            lista.Add(new TodoItem() { Name = "Só", Done = true });
+            lista.Add(new TodoItem() { Name = "Cukor", Done = true });
+            lista.Add(new TodoItem() { Name = "Spagetti", Done = true });
+            lista.Add(new TodoItem() { Name = "Marhahús", Done = false });
+            lista.Add(new TodoItem() { Name = "Paradicsom", Done = false });
 
             return View(lista);
         }

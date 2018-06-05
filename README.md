@@ -227,7 +227,9 @@ A nézet képes definiálni az adatmodell típusát, amin dolgozik.
   - Model
     Az adatokat tartalmazó objektum, ami a Controller és a View között az adatokat szállítja
 
-
+#### Házi feladat
+- GitHub repo (regisztráció és saját kódtár készítése)
+- Saját projekt segítségével ismerkedni a HTML-lel, az MVC-vel és a GitHub-bal
 
 
 

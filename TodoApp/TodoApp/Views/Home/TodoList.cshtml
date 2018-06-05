@@ -1,0 +1,16 @@
+﻿
+@{
+    ViewBag.Title = "TodoList";
+}
+
+<h2>Bevásárlólista</h2>
+
+@*Kiolvasom a ViewBag-be tárolt információt itt a nézeten*@
+@*A megoldás, hogy egy ciklussal kiolvassuk a listából az adatokat, és úgy írjuk a HTML-t*@
+
+<ol>
+    @foreach (var elem in @ViewBag.Lista)
+    {
+        <li>@elem</li>
+    }
+</ol>

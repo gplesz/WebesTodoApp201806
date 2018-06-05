@@ -1,4 +1,13 @@
-﻿
+﻿@model List<string>
+
+@*
+    Kiegészítettük a View definícióját, hogy képes 
+    legyen List<string> típusú adatot fogadni.
+    mintha a View egy függvény lenne, és azt mondanánk, hogy:
+    View(List<string> Model) vagy
+    TodoList<List<string> Model)
+*@
+
 @{
     ViewBag.Title = "TodoList";
 }
@@ -9,7 +18,7 @@
 @*A megoldás, hogy egy ciklussal kiolvassuk a listából az adatokat, és úgy írjuk a HTML-t*@
 
 <ol>
-    @foreach (var elem in @ViewBag.Lista)
+    @foreach (var elem in Model)
     {
         <li>@elem</li>
     }

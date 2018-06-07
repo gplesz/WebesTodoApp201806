@@ -268,3 +268,30 @@ Egy rövid képernyő skicc, specifikáció gyanánt:
 ```
 
 A Controller áttekintő nézetét szolgáltató kérés az Index, innen is kapta a nevét. Vagyis, a mi kezdeti áttekintő nézetünk, az Index action-re kell, hogy kerüljön. Ebből következik, hogy átnevezzük a jelenlegit.
+
+### Feladatok
+- indexre beviteli mező tétele és a bevitel programozása (majd, de előbb)
+  - [ ] beviteli oldal létrehozása
+        Ahhoz, hogy adatot küldjünk a böngészőből a szerver felé, kell
+        - kell egy űrlap <form></form> erre
+          - kell egy <input /> aminek van neve (<input name="valami megnevezés"/>)
+          - kell egy gomb (vagy <input type="submit" /> vagy <button></button>)
+        Ha ez mind megvan, akkor a böngésző a beviteli mező tartalmát beteszi a hívás paraméterei közé, így:
+        http://localhost:39399/Todo/Create?Tennival%C3%B3=agaadfgafgadf
+
+        Folyamat: 
+            1. /Todo/Create paraméter nélkül feladja a Create nézetet
+            2. /Todo/Create paraméterrel rögzíti az adatot és átirányít az Index-re
+
+        Sajnos az adatok mindig inicializálódnak, azt még meg kell oldani.
+
+        De a legnagyobb elvi baj ezzel, hogy az adatok felküldése GET metódust használ, ami (mivel adatmódosítás történik) nem szabványos.
+        Helyette POST kell.
+
+  - [X] beviteli oldal elérhetővé tétele az index oldalon (link formájában: http://localhost:39399/Todo/Create)
+        linkek esetén használható relatív cím fogalma: /Todo/Create
+        vagy használhatjuk a beépített megoldást: ActionLink
+
+  - [ ] indexre beviteli mező tétele és a bevitel programozása
+ 
+

@@ -8,8 +8,10 @@
 @*ha nincs megadva a formon a method, 
 akkor get az alapértelmezés*@
 <form method="post">
-    <input name="Name"/>
-    <input type="submit" value="Mentés"/>
+    <input name="name" >
+    @*<input id="isDone" name="isDone" type="checkbox" value="true" >*@
+    @Html.CheckBox("isDone")
+    <input type="submit" value="Mentés" >
     <button>Mentés</button>
 </form>
 

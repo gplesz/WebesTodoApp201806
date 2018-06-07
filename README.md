@@ -233,5 +233,38 @@ A nézet képes definiálni az adatmodell típusát, amin dolgozik.
 - GitHub repo (regisztráció és saját kódtár készítése)
 - Saját projekt segítségével ismerkedni a HTML-lel, az MVC-vel és a GitHub-bal
 
+## Az alkalmazásból CRUD alkalmazás készítése a Todo elemekre
+CRUD: **C**reate, **R**ead, **U**pdate, **D**elete kifejezések rövidítése
 
+Egy rövid képernyő skicc, specifikáció gyanánt:
 
+```
++------------------------------------------------+
+|                                                |
+|  +------------------+---------+--------+       |
+|  | elem 1           | módosít | töröl  |       |
+|  +-------------------------------------+       |
+|  | elem 2           | módosít | töröl  |       |
+|  +-------------------------------------+       |
+|  | elem 3           | módosít | töröl  | <-----------------------------+--+  Műveletek kezdeményezésére
+|  +------------------+---------+--------+       |                       |     szolgáló elemek, amivel
+|  |                                     |       |                       |     a felhasználó kezdeményezni
+|  +-------------------------------------+       |                       |     tudja az adott műveletet
+|  |                                     |       |                       |     (link, gomb, stb.)
+|  +-------------------------------------+       |                       |
+|  |                                     |       |                       |
+|  +-------------------------------------+       |                       |
+|  |                                     |       |                       |
+|  +-------------------------------------+       |                       |
+|                                                |                       |
+|                                                |                       |
+|                                                |                       |
+|  +-----------------+   +----------+            |                       v
+|  | beviteli mező   |   | rögzítés | <---------------------------------+
+|  +-----------------+   +----------+            |
+|                                                |
+|                                                |
++------------------------------------------------+
+```
+
+A Controller áttekintő nézetét szolgáltató kérés az Index, innen is kapta a nevét. Vagyis, a mi kezdeti áttekintő nézetünk, az Index action-re kell, hogy kerüljön. Ebből következik, hogy átnevezzük a jelenlegit.

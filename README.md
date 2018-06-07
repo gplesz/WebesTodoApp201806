@@ -335,9 +335,15 @@ A Controller áttekintő nézetét szolgáltató kérés az Index, innen is kapt
 +----------------------------------------------+
 ```
 
-  - [ ] valahogy az irányokat szét kéne választani az adatok/nézet kiszolgálásakor. Vagyis 
-     - [ ] lenne egy olyan függvény, ami kiszolgálja a Create navigáziót és feladja az űrlapot (GET Todo/Create)
-     - [ ] lenne egy olyan függvény, ami pedig fogadná az adatokat (POST Todo/Create)
+  - [X] valahogy az irányokat szét kéne választani az adatok/nézet kiszolgálásakor. Vagyis 
+     - [X] lenne egy olyan függvény, ami kiszolgálja a Create navigációt és feladja az űrlapot (GET Todo/Create)
+           [HttpGet] attributummal megoldható, hogy egy Action csak GET kéréseket szolgáljon ki.
+     - [X] lenne egy olyan függvény, ami pedig fogadná az adatokat (POST Todo/Create)
+           [HttpPost] attributummal pedig megoldható, hogy egy Action csak POST kéréseket szolgáljon ki.
+     Ha nincs attributum szűrő akkor alapértelmezésben a routing csak név alapján választ, minden metódust ugyanaz az egy Action-t minden kérés esetén .
+     a függvény szignatúrája: a függvény neve és a parméterlistája (típusok listája sorrenben, pl: Create(string, string, int)). A szignatúrához nem tartozik a visszatérési érték.
+     Ugyanaz a függvénynév különböző szignatúrával különböző függvénynek számít, így létrehozható.
+    Ez egy C# alaptulajdonság (function overloading).
 
   - [ ] indexre beviteli mező tétele és a bevitel programozása
  

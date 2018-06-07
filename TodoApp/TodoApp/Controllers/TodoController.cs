@@ -10,11 +10,21 @@ namespace TodoApp.Controllers
     public class TodoController : Controller
     {
 
+        //[HttpGet, HttpPost]
+        //[HttpGet]
+        //[HttpPost]
         public ActionResult Index()
         {
             return View(MyDb.Lista);
         }
 
+        [HttpGet] //a routing innentől csak a GET kérések esetén irányít ide
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        [HttpPost] //a routing innentől csak a POST kérések esetén irányít ide
         public ActionResult Create(string Name)
         {
             if (!string.IsNullOrEmpty(Name))
@@ -24,6 +34,9 @@ namespace TodoApp.Controllers
 
                 return RedirectToAction("Index");
             }
+
+
+            //todo: mivel az adat nem valid, itt kéne a hibaüzenettel valamit kezdeni (kiadni az ügyfél felé)
 
             return View();
         }

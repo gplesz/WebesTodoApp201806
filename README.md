@@ -271,15 +271,15 @@ A Controller áttekintő nézetét szolgáltató kérés az Index, innen is kapt
 
 ### Feladatok
 - indexre beviteli mező tétele és a bevitel programozása (majd, de előbb)
-  - [ ] beviteli oldal létrehozása
+  - [X] beviteli oldal létrehozása
         Ahhoz, hogy adatot küldjünk a böngészőből a szerver felé, kell
-        - kell egy űrlap <form></form> erre
-          - kell egy <input /> aminek van neve (<input name="valami megnevezés"/>)
-          - kell egy gomb (vagy <input type="submit" /> vagy <button></button>)
+        - kell egy űrlap `<form></form>` erre
+          - kell egy `<input />` aminek van neve (`<input name="valami megnevezés"/>`)
+          - kell egy gomb (vagy `<input type="submit" />` vagy `<button></button>`)
         Ha ez mind megvan, akkor a böngésző a beviteli mező tartalmát beteszi a hívás paraméterei közé, így:
-        http://localhost:39399/Todo/Create?Tennival%C3%B3=agaadfgafgadf
+        `http://localhost:39399/Todo/Create?Tennival%C3%B3=agaadfgafgadf `
 
-        Folyamat: 
+       Folyamat: 
             1. /Todo/Create paraméter nélkül feladja a Create nézetet
             2. /Todo/Create paraméterrel rögzíti az adatot és átirányít az Index-re
 

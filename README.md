@@ -279,6 +279,8 @@ A Controller áttekintő nézetét szolgáltató kérés az Index, innen is kapt
         Ha ez mind megvan, akkor a böngésző a beviteli mező tartalmát beteszi a hívás paraméterei közé, így:
         `http://localhost:39399/Todo/Create?Tennival%C3%B3=agaadfgafgadf `
 
+![get url querystring paraméter](images/get-url-querystring.png)
+
        Folyamat: 
             1. /Todo/Create paraméter nélkül feladja a Create nézetet
             2. /Todo/Create paraméterrel rögzíti az adatot és átirányít az Index-re
@@ -293,6 +295,49 @@ A Controller áttekintő nézetét szolgáltató kérés az Index, innen is kapt
         vagy használhatjuk a beépített megoldást: ActionLink
 
   - [X] Tesztadatok, amik kérések között is megmaradnak
+  - [X] Adatbevitel programozása POST segítségével
+        Post esetén az adatok Form paraméterként érkeznek:
+
+![POST paraméterküldés](images/post-formdata.png)
+    
+        Amit a Model Binder segítségével ugyanúgy függvény paraméterként tudunk átvenni az Action definícióban:
+
+```
+                                                           GET: URL paraméter        Model binding:név alapján egyeztet
++----------------------------------------------+           (Query string)              +-----+
+|    Böngésző                                  |         ^ +--------------->           |     |
++----------------------------------------------+         |                             |     |           Alkalmazás
+|                                              |         |                             |     |         +--------------+
+|                                              |         |                             |     |         |              |
+|              +------------------+            |         |                             |     |         |              |
+|              | Adat1=érték1     |            | +------->                             |     | Adatok  |              |
+|              |                  |            |                                       |     | +-----> |              |
+|              +------------------+            |                                       |     |         |              |
+|              | Adat2=érték2     |            | +------->                             |     |         |              |
+|              |                  |            |         |                             |     |         |              |
+|              +------------------+            |         |                             |     |         |              |
+|                                              |         |                             |     |         |              |
+|                                              |         |                             |     |         +--------------+
+|                                              |         |                             |     |
+|                                              |         | POST: Form data             |     |
+|                                              |         v------------------------->   |     |
+|                                              |                                       |     |
+|                                              |                                       |     |
+|                                              |                                       +-----+
+|                                              |
+|                                              |
+|                                              |
+|                                              |
+|                                              |
+|                                              |
+|                                              |
+|                                              |
++----------------------------------------------+
+```
+
+  - [ ] valahogy az irányokat szét kéne választani az adatok/nézet kiszolgálásakor. Vagyis 
+     - [ ] lenne egy olyan függvény, ami kiszolgálja a Create navigáziót és feladja az űrlapot (GET Todo/Create)
+     - [ ] lenne egy olyan függvény, ami pedig fogadná az adatokat (POST Todo/Create)
 
   - [ ] indexre beviteli mező tétele és a bevitel programozása
  

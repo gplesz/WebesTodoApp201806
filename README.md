@@ -292,6 +292,8 @@ A Controller áttekintő nézetét szolgáltató kérés az Index, innen is kapt
         linkek esetén használható relatív cím fogalma: /Todo/Create
         vagy használhatjuk a beépített megoldást: ActionLink
 
+  - [ ] Tesztadatok, amik kérések között is megmaradnak
+
   - [ ] indexre beviteli mező tétele és a bevitel programozása
  
 

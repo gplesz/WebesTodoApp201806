@@ -348,10 +348,6 @@ A Controller áttekintő nézetét szolgáltató kérés az Index, innen is kapt
   - [ ] indexre beviteli mező tétele és a bevitel programozása
  
 ### Házi feladat
-- megtalálni a különbséget az 
-  - `<input id="isDone" name="isDone" type="checkbox" value="true" >`
-  - és a @Html.CheckBox("isDone")
-  között.
 - saját beviteli oldal próbálgatása
 - előre gondolkodás: hogy lehet megoldani a törlést és a módosítást?
 
@@ -403,3 +399,8 @@ Az adatbázis létrehozásához:
 
 ### Házi feladat
 - hibalehetőségek vizsgálata a Single esetén
+- megtalálni a különbséget az 
+  - `<input id="isDone" name="isDone" type="checkbox" value="true" >`
+  - és a @Html.CheckBox("isDone")
+  között.
+

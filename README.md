@@ -355,3 +355,14 @@ A Controller áttekintő nézetét szolgáltató kérés az Index, innen is kapt
 - saját beviteli oldal próbálgatása
 - előre gondolkodás: hogy lehet megoldani a törlést és a módosítást?
 
+## Adatbáziskezelés
+Microsoft SQL Szervert telepítünk [chocolatey](https://chocolatey.org/) segítségével, ezeket a csomagokat telepítjük:
+
+- [Microsoft SQL Server Express](https://chocolatey.org/packages/sql-server-express)
+  ```
+  cinst sql-server-express
+  ```
+- [SQL Server Management Studio](https://chocolatey.org/packages/sql-server-management-studio): 
+  ```
+  cinst sql-server-management-studio
+  ```

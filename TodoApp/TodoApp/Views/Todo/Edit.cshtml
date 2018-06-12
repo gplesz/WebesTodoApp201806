@@ -1,0 +1,17 @@
+﻿@model TodoApp.Models.TodoItem
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@*a módosítás Action PUT-ra van állítva, így a form is ilyen hívást fog gyártani*@
+<form method="put">
+    <input name="name" value="@Model.Name">
+    @*<input id="isDone" name="isDone" type="checkbox" value="true" >*@
+    @Html.CheckBox("isDone")
+    <input type="submit" value="Mentés" >
+    <button>Mentés</button>
+</form>
+
+@Html.ActionLink("Mégsem", "Index")

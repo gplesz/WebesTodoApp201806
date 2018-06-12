@@ -355,6 +355,27 @@ A Controller áttekintő nézetét szolgáltató kérés az Index, innen is kapt
 - saját beviteli oldal próbálgatása
 - előre gondolkodás: hogy lehet megoldani a törlést és a módosítást?
 
+
+### Feladatok
+- [ ] Saját módosítás űrlap készítése
+  - [ ] nézet készítése
+  - [ ] GET action készítése
+        Mivel létező adatot módosítunk, így azonosítanunk kell a megfelelő tételt, így:
+       - [ ] vagy név alapján keresem meg a tételt
+       - [X] vagy készítek egy "megtalálási" módszert.
+             Minden listaelemnek azonosíthatónak kell lennie. Vagyis minden tételen van egy olyan adat, ami csak azon a tételen van, máshol nem szerepel. Ezt hívjuk egyedi azonosítónak. Erre van szükség a módosításhoz. Ez legyen számm, ami sorszám.
+  - [ ] PUT action készítése (a PUT ismételhető módosítást jelent: 1-szer, 2-szer, ... 10-szer végrehajtva ugyanazt az eredményt adja)
+- [ ] Saját törlés űrlap készítése
+  - [ ] nézet készítése
+  - [ ] GET action készítése
+  - [ ] DELETE action
+- [ ] Saját megtekintés űrlap készítése
+  - [ ] nézet készítése
+  - [ ] GET action készítése
+
+
+
+
 ## Adatbáziskezelés
 Microsoft SQL Szervert telepítünk [chocolatey](https://chocolatey.org/) segítségével, ezeket a csomagokat telepítjük:
 
@@ -371,3 +392,6 @@ A [chocolatey telepítéshez](https://chocolatey.org/install) pedig ezt a paranc
 ```
 @"%SystemRoot%\System32\WindowsPowerShell\v1.0\powershell.exe" -NoProfile -InputFormat None -ExecutionPolicy Bypass -Command "iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))" && SET "PATH=%PATH%;%ALLUSERSPROFILE%\chocolatey\bin"
 ```
+
+### Házi feladat
+- hibalehetőségek vizsgálata a Single esetén

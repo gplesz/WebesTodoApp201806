@@ -40,5 +40,40 @@ namespace TodoApp.Controllers
 
             return View();
         }
+
+        /// <summary>
+        /// Az action feladata az adott elem megjelenítése módosításra.
+        /// </summary>
+        /// <param name="id">a módosítandó tétel egyedi azonosítója</param>
+        /// <returns></returns>
+        [HttpGet]
+        public ActionResult Edit(int id)
+        {
+            //elő kell keresni az adott elemt
+
+            //ez lesz egy olyan LISTA, amin csak a feltételnek megfelelő elemek vannak
+            //MyDb.Lista.Where(x=>x.Id==id); 
+
+            //ha tudom, hogy pontosan egy elemet keresek, akkor ezt így tudom elkérni a listától
+            //ezt akkor tudom használni, ha garantálni tudom, hogy ez igaz.
+            //ha véletlenül mégsem igaz (több elem is teljesíti a feltételt, vagy egy sem)
+            //akkor a kérés hibával elszáll
+            var item = MyDb.Lista.Single(x => x.Id == id);
+
+            //ha nem tudom garantálni, akkor
+            //ha van ilyen elem, akkor ezt adja vissza
+            //ha nincs ilyen elem, akkor null-lal tér vissza.
+            //var item = MyDb.Lista.SingleOrDefault(x => x.Id == id);
+
+            //Ezt az elemet kell módosítanunk.
+
+            return View(item);
+        }
+
+        [HttpPut]
+        public ActionResult Edit(string name, bool isDone)
+        {
+            return View();
+        }
     }
 }

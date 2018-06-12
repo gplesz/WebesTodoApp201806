@@ -15,11 +15,11 @@ namespace TodoApp.Models
         //bevásárló lista adatai:
         public static List<TodoItem> Lista = new List<TodoItem>
         {
-            new TodoItem() { Name = "Só", Done = true },
-            new TodoItem() { Name = "Cukor", Done = true },
-            new TodoItem() { Name = "Spagetti", Done = true },
-            new TodoItem() { Name = "Marhahús", Done = false },
-            new TodoItem() { Name = "Paradicsom", Done = false }
+            new TodoItem() { Id=1, Name = "Só", Done = true },
+            new TodoItem() { Id=2, Name = "Cukor", Done = true },
+            new TodoItem() { Id=3, Name = "Spagetti", Done = true },
+            new TodoItem() { Id=4, Name = "Marhahús", Done = false },
+            new TodoItem() { Id=5, Name = "Paradicsom", Done = false }
         };
     }
 }

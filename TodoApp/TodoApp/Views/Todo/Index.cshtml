@@ -1,7 +1,7 @@
 ﻿@model List<TodoApp.Models.TodoItem>
 
 @*
-    Kiegészítettük a View definícióját, hogy képes 
+    Kiegészítettük a View definícióját, hogy képes
     legyen List<string> típusú adatot fogadni.
     mintha a View egy függvény lenne, és azt mondanánk, hogy:
     View(List<string> Model) vagy
@@ -14,7 +14,15 @@
 
 <h2>Bevásárlólista</h2>
 
-@*Kiolvasom a ViewBag-be tárolt információt itt a nézeten*@
+@*
+    minkét megoldás ugyanoda visz, a második a beépített ASP.NET
+    szolgáltatás, nem kell megadni a Controllert, mert tudja, "hol vagyunk"
+*@
+<a href="/Todo/Create">Új felvitele</a>
+@Html.ActionLink("Új felvitele", "Create")
+
+
+@*Kiolvasom a Modelben tárolt információt itt a nézeten*@
 @*A megoldás, hogy egy ciklussal kiolvassuk a listából az adatokat, és úgy írjuk a HTML-t*@
 
 <ol>
@@ -22,18 +30,19 @@
     {
         if (todoItem.Done)
         {
-            <li><strike>@todoItem.Name</strike></li>
+            <li><strike>@Html.ActionLink(todoItem.Name, "Details", new { id = todoItem.Id })</strike> @Html.ActionLink("Módosítás", "Edit", new { id = todoItem.Id }) @Html.ActionLink("Törlés", "Delete", new { id = todoItem.Id }) </li>
         }
         else
         {
-            <li>@todoItem.Name</li>
+            <li>@Html.ActionLink(todoItem.Name, "Details", new { id = todoItem.Id }) @Html.ActionLink("Módosítás", "Edit", new { id = todoItem.Id }) @Html.ActionLink("Törlés", "Delete", new { id = todoItem.Id })</li>
         }
     }
 </ol>
 
-@*
-    minkét megoldás ugyanoda visz, a második a beépített ASP.NET
-    szolgáltatás, nem kell megadni a Controllert, mert tudja, "hol vagyunk"
-*@
-<a href="/Todo/Create">Új felvitele</a>
-@Html.ActionLink("Új felvitele","Create")
+@using (Html.BeginForm("Create","Todo"))
+{
+
+    @Html.TextBox("Name")
+    @Html.CheckBox("isDone")
+    <button>Mentés</button>
+}

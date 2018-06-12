@@ -371,10 +371,10 @@ A Controller áttekintő nézetét szolgáltató kérés az Index, innen is kapt
   - [X] nézet készítése
   - [X] GET action készítése
   - [X] DELETE action helyett POST action készítése
-- [ ] Saját megtekintés (Details) űrlap készítése
-  - [ ] nézet készítése
-  - [ ] GET action készítése
-- [ ] Ezek elérésének a megoldása az Index oldalról
+- [X] Saját megtekintés (Details) űrlap készítése
+  - [X] nézet készítése
+  - [X] GET action készítése
+- [X] Ezek elérésének a megoldása az Index oldalról
 
 
 ## Adatbáziskezelés

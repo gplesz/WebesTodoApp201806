@@ -101,5 +101,11 @@ namespace TodoApp.Controllers
             MyDb.Lista.Remove(item);
             return RedirectToAction("Index");
         }
+
+        public ActionResult Details(int id)
+        {
+            var item = MyDb.Lista.Single(x => x.Id == id);
+            return View(item);
+        }
     }
 }

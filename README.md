@@ -357,24 +357,24 @@ A Controller áttekintő nézetét szolgáltató kérés az Index, innen is kapt
 
 
 ### Feladatok
-- [ ] Saját módosítás űrlap készítése
+- [ ] Saját módosítás (Edit) űrlap készítése
   - [X] nézet készítése
   - [X] GET action készítése
         Mivel létező adatot módosítunk, így azonosítanunk kell a megfelelő tételt, így:
        - [ ] vagy név alapján keresem meg a tételt
        - [X] vagy készítek egy "megtalálási" módszert.
-             Minden listaelemnek azonosíthatónak kell lennie. Vagyis minden tételen van egy olyan adat, ami csak azon a tételen van, máshol nem szerepel. Ezt hívjuk egyedi azonosítónak. Erre van szükség a módosításhoz. Ez legyen számm, ami sorszám.
+             Minden listaelemnek azonosíthatónak kell lennie. Vagyis minden tételen van egy olyan adat, ami csak azon a tételen van, máshol nem szerepel. Ezt hívjuk egyedi azonosítónak. Erre van szükség a módosításhoz. Ez legyen szám, ami sorszám.
+             **Figyelem:** az azonosítót a létrehozáskor is ki kell tölteni!
   - [X] POST action készítése (a PUT ismételhető módosítást jelent: 1-szer, 2-szer, ... 10-szer végrehajtva ugyanazt az eredményt adja)
         Sajnos a HTTP használ PUT-ot, de a html form az nem, így csak GET és POST között tudunk választani. Vagyis, ez az Action a POST-ot fogja kapni.
-- [ ] Saját törlés űrlap készítése
+- [X] Saját törlés (Delete) űrlap készítése
+  - [X] nézet készítése
+  - [X] GET action készítése
+  - [X] DELETE action helyett POST action készítése
+- [ ] Saját megtekintés (Details) űrlap készítése
   - [ ] nézet készítése
   - [ ] GET action készítése
-  - [ ] DELETE action
-- [ ] Saját megtekintés űrlap készítése
-  - [ ] nézet készítése
-  - [ ] GET action készítése
-
-
+- [ ] Ezek elérésének a megoldása az Index oldalról
 
 
 ## Adatbáziskezelés

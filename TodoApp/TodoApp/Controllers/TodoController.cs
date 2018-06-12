@@ -30,7 +30,12 @@ namespace TodoApp.Controllers
             if (!string.IsNullOrEmpty(name))
             {//ha van adat a paraméterben
                 //adatok mentése és vissza az index-re
-                MyDb.Lista.Add(new TodoItem() { Name = name, Done = isDone });
+                //ez nem jó, mert ha törlök a listából akkor 
+                //onnantól ez duplázni fogja a számokat
+                //var maxId = MyDb.Lista.Count;
+
+                var maxId = MyDb.Lista.Max(x => x.Id);
+                MyDb.Lista.Add(new TodoItem() { Id = maxId + 1,  Name = name, Done = isDone });
 
                 return RedirectToAction("Index");
             }
@@ -79,6 +84,21 @@ namespace TodoApp.Controllers
             item.Name = name;
             item.Done = done;
 
+            return RedirectToAction("Index");
+        }
+
+        [HttpGet]
+        public ActionResult Delete(int id)
+        {
+            var item = MyDb.Lista.Single(x => x.Id == id);
+            return View(item);
+        }
+
+        [HttpPost]
+        public ActionResult DeleteConfirmed(int id)
+        {
+            var item = MyDb.Lista.Single(x => x.Id == id);
+            MyDb.Lista.Remove(item);
             return RedirectToAction("Index");
         }
     }

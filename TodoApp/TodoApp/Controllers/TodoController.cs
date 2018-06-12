@@ -9,13 +9,14 @@ namespace TodoApp.Controllers
 {
     public class TodoController : Controller
     {
+        Db db = new Db();
 
         //[HttpGet, HttpPost]
         //[HttpGet]
         //[HttpPost]
         public ActionResult Index()
         {
-            return View(MyDb.Lista);
+            return View(db.TodoItems.ToList());
         }
 
         [HttpGet] //a routing innentől csak a GET kérések esetén irányít ide
@@ -34,8 +35,10 @@ namespace TodoApp.Controllers
                 //onnantól ez duplázni fogja a számokat
                 //var maxId = MyDb.Lista.Count;
 
-                var maxId = MyDb.Lista.Max(x => x.Id);
-                MyDb.Lista.Add(new TodoItem() { Id = maxId + 1,  Name = name, Done = isDone });
+                db.TodoItems.Add(new TodoItem() { Name = name, Done = isDone });
+
+                //adatbázisba írni:
+                db.SaveChanges();
 
                 return RedirectToAction("Index");
             }
@@ -63,7 +66,7 @@ namespace TodoApp.Controllers
             //ezt akkor tudom használni, ha garantálni tudom, hogy ez igaz.
             //ha véletlenül mégsem igaz (több elem is teljesíti a feltételt, vagy egy sem)
             //akkor a kérés hibával elszáll
-            var item = MyDb.Lista.Single(x => x.Id == id);
+            var item = db.TodoItems.Single(x => x.Id == id);
 
             //ha nem tudom garantálni, akkor
             //ha van ilyen elem, akkor ezt adja vissza
@@ -79,10 +82,12 @@ namespace TodoApp.Controllers
         public ActionResult Edit(int id, string name, bool done)
         {
             //elem kikeresése
-            var item = MyDb.Lista.Single(x => x.Id == id);
+            var item = db.TodoItems.Single(x => x.Id == id);
             //módosítás
             item.Name = name;
             item.Done = done;
+
+            db.SaveChanges();
 
             return RedirectToAction("Index");
         }
@@ -90,21 +95,23 @@ namespace TodoApp.Controllers
         [HttpGet]
         public ActionResult Delete(int id)
         {
-            var item = MyDb.Lista.Single(x => x.Id == id);
+            var item = db.TodoItems.Single(x => x.Id == id);
             return View(item);
         }
 
         [HttpPost]
         public ActionResult DeleteConfirmed(int id)
         {
-            var item = MyDb.Lista.Single(x => x.Id == id);
-            MyDb.Lista.Remove(item);
+            var item = db.TodoItems.Single(x => x.Id == id);
+            db.TodoItems.Remove(item);
+            db.SaveChanges();
+
             return RedirectToAction("Index");
         }
 
         public ActionResult Details(int id)
         {
-            var item = MyDb.Lista.Single(x => x.Id == id);
+            var item = db.TodoItems.Single(x => x.Id == id);
             return View(item);
         }
     }

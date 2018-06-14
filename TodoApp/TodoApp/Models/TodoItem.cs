@@ -14,7 +14,7 @@ namespace TodoApp.Models
         /// 
         [Key]
         public int Id { get; set; }
-        public string Name { get; internal set; }
-        public bool Done { get; internal set; }
+        public string Name { get; set; }
+        public bool Done { get; set; }
     }
 }

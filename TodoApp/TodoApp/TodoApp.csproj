@@ -155,6 +155,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\Todo2Controller.cs" />
     <Compile Include="Controllers\TodoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -211,6 +212,11 @@
     <Content Include="Views\Todo\Delete.cshtml" />
     <Content Include="Views\Todo\Details.cshtml" />
     <Content Include="Views\Todo\Teszt.cshtml" />
+    <Content Include="Views\Todo2\Create.cshtml" />
+    <Content Include="Views\Todo2\Delete.cshtml" />
+    <Content Include="Views\Todo2\Details.cshtml" />
+    <Content Include="Views\Todo2\Edit.cshtml" />
+    <Content Include="Views\Todo2\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

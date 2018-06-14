@@ -491,6 +491,12 @@ a sorrendjük alapján választja az elsőt, ami a `true`.
   A CSS beállításokat a böngészőkben a Developer Tools (F12) előhívásával vizsgálhatjuk.
 
 #### Bootstrap
+A Twitter egyik grafikusa és egyik programozója munkájából kialakult webes csomag, ami képes az adott weboldal reszponzív (különböző méretekhez automatikusan igazodó) megjelenítésére.
+A csomag [innen](https://getbootstrap.com/) elérhető, a forráskódja a [githubon](https://github.com/twbs/bootstrap) van.
+
+A Bootstrap egyik alapja a [Grid rendszer](https://getbootstrap.com/docs/4.1/layout/grid/).
+
+A másik elve pedig az, hogy különböző megjelenítési elemeket lehetőleg a `class` paraméter megadásával létre lehessen hozni, egyéb css és javascript ismeretek nélkül. [Az egyes komponensek listája](https://getbootstrap.com/docs/4.1/components/alerts/).
 
 #### Az ASP.NET Html generáló felépítése
 

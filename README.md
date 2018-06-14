@@ -399,8 +399,59 @@ Az adatbázis létrehozásához:
 
 ### Házi feladat
 - hibalehetőségek vizsgálata a Single esetén
+  - 'Sequence contains more than one element': ha több elemre is igaz a szűrőfeltétel, pl:
+    ```csharp
+    var item = db.TodoItems.FirstOrDefault(x => x.Name.Contains("a"));
+    if (item == null)
+    { // ha nincs ilyen elem
+
+    }
+    else
+    { // ha megvan
+
+    }
+    ```
+  - 'Sequence contains no elements': nincs olyan elem a listában, amire keresünk
+    ```csharp
+    var item = db.TodoItems.SingleOrDefault(x => x.Id == id);
+    if (item == null)
+    { // ha nincs ilyen elem
+
+    }
+    else
+    { // ha megvan
+
+    }
+    ```
+  
+
+
 - megtalálni a különbséget az 
   - `<input id="isDone" name="isDone" type="checkbox" value="true" >`
   - és a @Html.CheckBox("isDone")
-  között.
+    között.
+
+Utóbbi ilyet generál:
+
+```
+<input name="isDone" id="isDone" type="checkbox" value="true">
+<input name="isDone" type="hidden" value="false">
+```
+
+Ez úgy működik, hogy a checkbox csak akkor jön fel a FormData-val, ha *be van pipálva*. 
+Ha nincs, akkor egyszerűen a **böngésző nem küldi fel**. Ebben az esetben, (ha nincs pipa)
+a rejtett mező jön a böngészőből, ami `false` értékű, pont, mintha nem lenne a checkbox 
+kipipálva.
+Ha pedig ott a pipa, akkor **mindkét érték feljön**, egy `true` és egy `false`, és a **Modelbinder**
+a sorrendjük alapján választja az elsőt, ami a `true`.
+
+### Entity Framework Code First
+
+### Stílusok és stíluslapok
+
+#### Saját stílusok
+
+#### Bootstrap
+
+### Mit lehet kihozni egy varázslóból
 

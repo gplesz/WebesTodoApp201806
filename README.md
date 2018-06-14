@@ -535,4 +535,6 @@ A Action kijelöli a View-t, az kijelöli a Layout-ot, generáljuk a View alapj�
 
 
 ### Mit lehet kihozni egy varázslóból
+- Ha EntityFramework-ot használunk, és jól állítottuk elő az adatmodellt, akkor a Visual Studio controller varázslójával teljesen helyes Bootstrap nézeteket és hozzájuk tartozó varázslót lehet generálni két kattintással.
 
+### Házi Feladat

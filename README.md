@@ -486,6 +486,7 @@ a sorrendjük alapján választja az elsőt, ami a `true`.
 
 - egységes stílusokat használjunk
   Erre szolgál a CSS: a stílusokat elválasztjuk a html kódtól, a html a tartalom, a CSS a forma definíciója.
+  Részletesen [ezen az oldalon](https://www.w3schools.com/css/default.asp) lehet utánanézni.
 
 #### Bootstrap
 

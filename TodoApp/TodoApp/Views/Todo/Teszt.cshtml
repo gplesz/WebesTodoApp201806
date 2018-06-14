@@ -9,11 +9,27 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>Teszt</title>
+
+    @*A stílusdefiníciók helye*@
+    <style>
+        .azureHatter {
+            background-color:azure;
+        }
+        .kekHatter {
+            background-color:darkblue;
+        
+        }
+        .pirosHatter {
+            background-color:crimson;
+        }
+    </style>
 </head>
-<body style="background-color:azure">
-    <h1 style="background-color:darkblue">Ez az oldal címe</h1>
-    <div style="background-color:crimson"> 
-        Ez pedig az oldalon található bármilyen szöveg
+<body class="azureHatter">
+    <div class="pirosHatter">
+        <h1 class="kekHatter">Ez az oldal címe</h1>
+        <div class="kekHatter">
+            Ez pedig az oldalon található bármilyen szöveg
+        </div>
     </div>
 </body>
 </html>

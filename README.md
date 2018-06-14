@@ -447,6 +447,35 @@ a sorrendjük alapján választja az elsőt, ami a `true`.
 
 ### Entity Framework Code First
 
+```
++--------------------------------+    +---------------------------------+          +----------------------------------+
+|                                |    |                                 |          |                                  |
+|                                |    |     EntityFramework             |          |                                  |
+|        Alkalmazás              |    |     Code First                  |          |      Adatbázis                   |
+|                                |    |                                 |          |                                  |
+|                                |    |                                 |          |  +---------------+               |
+|                                |    |     1. A kód alapján kitalálja  |          |  |  TodoItems    |               |
+|                                |    |        hogy hogy lenne jó       |          |  |               |               |
+|           Adatok osztályba     |    |   +->  adatbázisba írni az  +-> | +------> |  |  TodoItem     |               |
+|           szervezve            |    |   |    adatokat                 |          |  |  TodoItem     |               |
+|           (TodoItem)           |    |   |                             |          |  |  TodoItem     |               |
+|                                |    |   |                             |          |  |  ...          |               |
+|                         +--->  | +> | +->                             |          |  |               |               |
+|                         +      |    |                                 |          |  |               |               |
+|           Adatelérési osztály  |    |                                 |  <-----------------+        |               |
+|           (DbContext)          |    |     2. Ha pedig adatot akarok   |  |       |  |      ^        |               |
+|           DbSet<TodoItem>      |    |        lekérdezni, akkor a Linq |  v       |  |      |        |               |
+|              TodoItems   <-----------------+ felületen keresztül      | <+       |  +---------------+               |
+|                                |    |        fogadja a kérést és      |          |         ^                        |
+|                                |    |        SQL lekérdezéssé alakítja|          |         +                        |
+|   db.TodoItems.Single() +---------------->   a visszakapott adatokat  | +-------------> SELECT                      |
+|                                |    |        pedig betölti a TodoItems|          |        Id, Name, Done            |
+|                                |    |        DbSet-be                 |          |      WHERE                       |
+|                                |    |                                 |          |        Id == @id                 |
+|                                |    |                                 |          |                                  |
++--------------------------------+    +---------------------------------+          +----------------------------------+
+```
+
 ### Stílusok és stíluslapok
 
 #### Saját stílusok

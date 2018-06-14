@@ -500,5 +500,39 @@ A másik elve pedig az, hogy különböző megjelenítési elemeket lehetőleg a
 
 #### Az ASP.NET Html generáló felépítése
 
+A html oldal generálásának lépései:
+1. ~\Views\_ViewStart.cshtml (itt általában a Layout-ot állítjuk be)
+2. A folytatás a megadott Layout-tól függ, layout oldalakból több is lehet. Le is tilthatom: 
+   ```csharp
+   @{
+       Layout = null;
+   }
+   ```
+3. A Layout olda tartalmazza a html vázat. (pl: ~\Views\Shared\_Layout.cshtml)
+4. itt a html generáláson kívül eldől, hogy milyen css és milyen javascript állományokat tölt be az oldal.
+  - a css-t a `<head></head>` részben kell betölteni, a javascripteket pedig a `<body></body>` rész végén szoktuk.
+  - ezeket az állományokat csomagokba szervezzük (bundle) és így hivatkozunk rájuk.
+    ```
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    ``` 
+5.  a html vázban kihagy két helyet:
+    - a `@RenderBody()` sor jelzi azt a részt, ahova az Action által meghatározott nézet kerül.
+    - a script kódokat a `<body></body>` végére tesszük, ennek a helyét hagyja ki a 
+      ```csharp
+      @RenderSection("scripts", required: false)
+      ```
+      sor
+
+    a végére pedig a javascriptek betöltése kerül a saját bundle-ból:
+    ```
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    ```
+
+Egy kérés kiszolgálása tehát:
+A Action kijelöli a View-t, az kijelöli a Layout-ot, generáljuk a View alapján a html kód tartalmi részét, generáljuk a Layout kód alapján a html oldalt, és a View által generált htmlt beszúlruk a teljes oldal megfelelő helyére.
+
+
 ### Mit lehet kihozni egy varázslóból
 

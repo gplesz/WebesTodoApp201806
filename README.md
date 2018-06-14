@@ -477,8 +477,15 @@ a sorrendjük alapján választja az elsőt, ami a `true`.
 ```
 
 ### Stílusok és stíluslapok
+[HTML és CSS gyártás kézzel ingyenes tanfolyam](https://app.netacademia.hu/Tanfolyam/2017htmllanding-lenyugozo-weblapok-keszitese)
 
 #### Saját stílusok
+
+- stílusok használata
+  A HTML leírónyelv minden HTML taghez enged `style` paramétert megadni. Ebben színezésre méretre, formázásra, elhelyezkedére vonatkozó beállításokat lehet megadni. Bővebben a [w3schools](https://www.w3schools.com/html/html_styles.asp) oldalán érdemes nézelődni.
+
+- egységes stílusokat használjunk
+  Erre szolgál a CSS: a stílusokat elválasztjuk a html kódtól, a html a tartalom, a CSS a forma definíciója.
 
 #### Bootstrap
 

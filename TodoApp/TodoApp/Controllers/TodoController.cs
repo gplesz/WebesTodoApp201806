@@ -114,5 +114,10 @@ namespace TodoApp.Controllers
             var item = db.TodoItems.Single(x => x.Id == id);
             return View(item);
         }
+
+        public ActionResult Teszt()
+        {
+            return View();
+        }
     }
 }

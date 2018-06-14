@@ -538,3 +538,11 @@ A Action kijelöli a View-t, az kijelöli a Layout-ot, generáljuk a View alapj�
 - Ha EntityFramework-ot használunk, és jól állítottuk elő az adatmodellt, akkor a Visual Studio controller varázslójával teljesen helyes Bootstrap nézeteket és hozzájuk tartozó varázslót lehet generálni két kattintással.
 
 ### Házi Feladat
+- hozzatok létre új adat osztályt
+- kössétek be a Db.cs-be
+- hozzatok létre hozzá kézzel vezérlőt és nézeteket a CRUD-hez
+- hozzatok létre varázslóval vezérlőt és nézeteket
+- hasonlítsátok össze a kódot, és indokoljátok a különbséget.
+- Például a nyilvántartásba felvehettek 
+  - autókat (szín, rendszám, típus, stb.)
+  - számítógépeket
